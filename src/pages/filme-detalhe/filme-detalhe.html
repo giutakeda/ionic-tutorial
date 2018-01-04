@@ -1,0 +1,53 @@
+<!--
+  Generated template for the FilmeDetalhePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>filmeDetalhe</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngIf="detalheFilmeArr">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs/Kaio.jpg">
+          </ion-avatar>
+          <h2>{{ detalheFilmeArr.original_title }}</h2>
+          <p>{{ detalheFilmeArr.release_date }}</p>
+        </ion-item>
+    
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + detalheFilmeArr.poster_path">
+    
+        <ion-card-content>
+          <p>{{ detalheFilmeArr.overview }}</p>
+        </ion-card-content>
+    
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>{{objeto_feed.qntd_likes}}</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>{{objeto_feed.qntd_comments}}</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+    
+      </ion-card>
+</ion-content>
